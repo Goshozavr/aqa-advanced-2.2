@@ -5,5 +5,5 @@
 //console.log(Math.PI*Math.pow(radius,2))
 
 const radius = 15
-const S = (Math.PI*Math.pow(radius,2))
-console.log(+S.toFixed(2))
+const circleArea = Math.PI*Math.pow(radius,2)
+console.log(+circleArea.toFixed(2))
