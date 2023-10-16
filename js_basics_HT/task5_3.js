@@ -1,5 +1,5 @@
 const height = 5 
 const radius = 3
-const SC = (Math.PI*Math.pow(radius,2)*height)
+const circleVolume = (Math.PI*Math.pow(radius,2)*height)
 
-console.log(+SC.toFixed(2))
+console.log(+circleVolume.toFixed(2))
