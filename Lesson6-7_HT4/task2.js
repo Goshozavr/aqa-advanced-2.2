@@ -1,14 +1,8 @@
+const ADULT_AGE = 18
 
-function printAge(age){
-    if(age >=18){
-        const isAdult = true
-        console.log("isAdult", isAdult, "because the age of this person is", age, "years old")
-    }
-    else{
-        const isAdult = false
-        console.log("isAdult", isAdult, "because the age of this person is", age, "years old")
-    }
+function isAdult(age){
+    return age >= ADULT_AGE
 }
 
-printAge(15)
-printAge(25)
+console.log(isAdult(25))
+console.log(isAdult(15))
