@@ -40,14 +40,14 @@ class Book {
     static findOldestBook(booksList){
         let oldestBook = booksList[0]
         for (const book of booksList) {
-            if (book._year < oldestBook._year) {
+            if (book.year < oldestBook.year) {
                 oldestBook = book
             }
         }
         return oldestBook
     }
     printInfo() {
-        console.log(this._title, this._author, this._year)
+        console.log(this.title, this.author, this.year)
     }
 }
 

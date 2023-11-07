@@ -17,10 +17,10 @@ class EBook extends Book{
         this._format = format
     }
     static fromBook(book, fileFormat){
-        return new EBook(book.title, book._author, book._year, fileFormat)
+        return new EBook(book.title, book.author, book.year, fileFormat)
     }
     printInfo() {
-        console.log(this._title, this._author, this._year, this._format)
+        console.log(this.title, this.author, this.year, this.format)
     }
 }
 
