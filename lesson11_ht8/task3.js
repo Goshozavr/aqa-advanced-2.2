@@ -1,11 +1,9 @@
 const BASE_URL = "https://jsonplaceholder.typicode.com"
 
-async function fetchTodoById(id){
+async function fetchToDoById(id){
     return fetch(`${BASE_URL}/todos/1`)
     .then((response) => response.json())
 }
-
-fetchTodoById(1).then((value) => console.log("To do:", value))
 
 async function fetchUserById(id){
     const response = await fetch(`${BASE_URL}/users/1`) 
@@ -13,4 +11,18 @@ async function fetchUserById(id){
     return jsonBody
 }
 
-fetchUserById(1).then((value) => console.log("User 1:", value))
+Promise.race([fetchToDoById(), fetchUserById()])
+    .then ((result) => {
+        console.log("Перший виконаний проміс:", result)
+    })
+    .catch ((error) => {
+        console.log("Something went wrong", error)
+    })
+
+Promise.all([fetchToDoById(), fetchUserById()])
+    .then((result) => {
+        console.log("Promises values:", result)
+    })
+    .catch((error) => {
+        console.log("Some error", error)
+    })
